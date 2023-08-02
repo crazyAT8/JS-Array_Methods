@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Array Method</title>
+    <style>
+        body {
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 5px 5px;
+        }
+        h1 {
+            font-family: monospace;
+            padding-left: 20px;
+            margin-left: 40px;
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 5px 5px;
+            width: 40%;
+        }
+        #syntax {
+            border: 1px solid black;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        td {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding-left: 5px;
+        }
+        th {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        #table1 {
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 100px;
+            padding: 5px;
+        }
+        #table2 {
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 100px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filter Array Method</h1>
+    <pre>
+        <b><u>Definition</u></b>:                                                   <b><u>Similar</u></b>: map()
+                This method creates a new array                                forEach()
+                    filled with elements that pass a test 
+                        provided by a function.
+                It does not execute 
+                    the function for empty elements
+                        and does not change the original array 
+
+        <b><u>Syntax</u></b>
+
+            <span id="syntax"><i>array.filter(function(currentValue, index, arr), thisValue)</i></span>
+
+        <b><u>Parameters</u></b>
+        <table id="table1">
+            <tbody>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><i>function()</i></td>
+                    <td>
+                        Required.
+                        A function to run for each array element
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>currentValue</i></td>
+                    <td>
+                        Required.
+                        The value of the current element.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>index</i></td>
+                    <td>
+                        Optional.
+                        The index of the current element.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>arr</i></td>
+                    <td>
+                        Optional.
+                        The array of the current element.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>thisValue</i></td>
+                    <td>
+                        Optional. Default undefined 
+                        A value no elements pass the test it returns an empty array.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <b><u>Return Value</u></b>
+        <table id="table2">
+            <tbody>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>An Array</td>
+                    <td>
+                        Containing the elements that pass the test.
+                        If no elments pass the test it returns an empty array.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <b><u>Example:</u></b>
+                                    Click "Test" to get every element in the array that has a value above this number: 
+                                    <span><input type="number" id="numberToCheck"></span>
+                                    <button onclick="philter2()">Test</button>
+                <b>Return Value:</b><span id="test"></span>
+
+        <b><u>Code:</u></b>
+        const numbers = [1, 24, 45, 73, 26, 38, 29, 17, 13, 11, 23];
+
+        function checkNumber(numbers) {
+            return numbers > document.getElementById("numberToCheck").value;
+        }
+
+        function philter2() {
+            document.getElementById("test").innerHTML = numbers.filter(checkNumber);
+        }
+    </pre>
+
+    <script>
+        const numbers = [1, 24, 45, 73, 26, 38, 29, 17, 13, 11, 23];
+
+        function checkNumber(numbers) {
+            return numbers > document.getElementById("numberToCheck").value;
+        }
+
+        function philter2() {
+            document.getElementById("test").innerHTML = numbers.filter(checkNumber);
+        }
+    </script>
+</body>
+</html>

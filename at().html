@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Method .at()</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+        html {
+            font-family: monospace;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px 3px black;
+        }
+        .header {
+            text-align: center;
+            font-size: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+        }
+        .def ul {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+        }
+        li {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 1px 1px black;
+            padding: 5px;
+            margin: 5px 10px 5px 5px;
+        }
+        .syntax {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+            padding: 5px;
+        }
+        .syntax h1 {
+            font-size: 15px;
+            margin: 0;
+        }
+        table, caption, td, th, thead, tbody, tr {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+            padding: 3px;
+        }
+        .footer {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+        }
+        .examples {
+            margin: 0;
+            padding: 0 0 0 0px;
+        }
+
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        }
+        .header {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .syntax {
+            margin-top: 20px;
+            padding: 20px;
+        }
+        /* .row {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+        } */
+        .def {
+            padding-top: 5px;
+        }
+        .def ul {
+            padding: 20px;
+        }
+        .split {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method:</u> <mark>.at()</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u></b>: 
+                <li>returns an indexed element from an array.</li>
+                <li>returns the same as [].</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>array.at(index)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+                <table class="parameters">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>index</td>
+                            <td>
+                                Optional.<br>
+                                The index (position) of the array element to be returned.<br>
+                                Default is 0.<br>
+                                -1 returns the last element.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>An Element</td>
+                            <td>The element of the given position (index) in the array.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <ul><b><u>Notes</u></b>: 
+            <li><b><i>.at()</i></b> is supported in all browsers since March 2022</li>
+            <li>The bracked notation [] returns an indexed element from an array.</li>
+            <li>An empty index like at() defaults to at(0).</li>
+            <li>An index of -1 returns the last element from the array.</li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-7 footer">
+            <div>
+                <h3><u>Example:</u></h3>
+                <h4><b><u>Code</u></b>:</h4>
+                    <p class="examples">
+                        <code>
+                            const fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+        let fruit2 = fruits.at(2);<br>
+        let fruit1 = fruits[1];<br>
+        let fruitDefault = fruits.at();<br>
+        let lastFruit = fruits.at(-1);<br>
+                            
+        document.getElementById<span class="split"><br></span>("example1").innerHTML = fruit2;
+        document.getElementById<span class="split"><br></span>("example2").innerHTML = fruit1;
+        document.getElementById<span class="split"><br></span>("example3").innerHTML = fruitDefault;
+        document.getElementById<span class="split"><br></span>("example4").innerHTML = lastFruit;
+                        </code>
+                    </p>
+            </div>
+        </div>
+
+        <div class="col-5 footer">
+            <ol><b><u>Result</u></b>: 
+                <li><span id="example1"></span></li>
+                <li><span id="example2"></span></li>
+                <li><span id="example3"></span></li>
+                <li><span id="example4"></span></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let fruit2 = fruits.at(2);
+        let fruit1 = fruits[1];
+        let fruitDefault = fruits.at();
+        let lastFruit = fruits.at(-1);
+
+        document.getElementById("example1").innerHTML = fruit2;
+        document.getElementById("example2").innerHTML = fruit1;
+        document.getElementById("example3").innerHTML = fruitDefault;
+        document.getElementById("example4").innerHTML = lastFruit;
+    </script>
+</body>
+</html>

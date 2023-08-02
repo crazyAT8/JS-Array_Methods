@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>concat array method</title>
+    <style>
+        pre {
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 5px 5px;
+            padding: 25px;
+            width: 50%;
+        }
+        h1 {
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        <h1>
+            <u>JavaScript Array Method:</u> <mark>concat()</mark>
+        </h1>
+        <b>
+            Definition and Usage
+        </b>
+            - concatenates (joins) two or more arrays
+            - returns a new array, containing the joined arrays 
+            - does not change the existing array 
+            - ES1 (1997)
+
+        <b>
+            <i>Syntax:</i>
+        </b>
+            <b><i>array1.concat(array2, array3, ..., arrayX)</i></b>
+        <b>
+            Parameters
+        </b>
+            - array2 (required)
+            - all others are optional
+        <b>
+            Return Value
+        </b>
+            <b><u>type:</u></b> an array
+            <b><u>description:</u></b> the joined arrays 
+        <h3><u>Example:</u></h3>
+            <b><u>Code:</u></b>
+            const arr1 = ["peach", "mango", "tangerine"];
+            const arr2 = ["lemon", "lime", "orange"];
+            const arr3 = ["Banana"];
+
+            const fruits = arr1.concat(arr2, arr3);
+
+            document.getElementById("example1").innerHTML = fruits;
+
+            <b><u>Result:</u></b>
+            <p id="example1"></p>
+
+            <b><u>Note:</u></b> also a string method
+    </pre>
+        <script>
+            const arr1 = ["peach", "mango", "tangerine"];
+            const arr2 = ["lemon", "lime", "orange"];
+            const arr3 = ["Banana"];
+
+            const fruits = arr1.concat(arr2, arr3);
+
+            document.getElementById("example1").innerHTML = fruits;
+        </script>
+    
+</body>
+</html>

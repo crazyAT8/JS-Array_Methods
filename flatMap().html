@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Method .flatMap()</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+        html {
+            font-family: "Montserrart", sans-serif;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 16px;
+            box-shadow: -2px -2px 6px 2px #fff, 2px 2px 6px 2px #c4c4c4;
+            border-color: #DFDFDF;
+        }
+        body {
+            background-color: #eee;
+        }
+        .header {
+            text-align: center;
+            font-size: 10px;
+            border: 1px solid rgb(252, 252, 240);
+            border-radius: 16px;
+            box-shadow: -2px -2px 10px 2px #ffffff, inset 2px 2px 10px 2px #8c8989;
+        }
+        .def ul {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+        }
+        li {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: inset -1px -1px 3px 1px #FFF, inset 1px 1px 3px 1px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 5px;
+            margin: 5px 10px 5px 5px;
+        }
+        .syntax {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 10px 2px #FFF, 2px 2px 10px 2px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 5px;
+            font-size: 11px;
+        }
+        .syntax h1 {
+            font-size: 15px;
+            margin: 0;
+        }
+        table, caption, td, th, thead, tbody, tr {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 3px;
+        }
+        .footer {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 10px 4px #C4C4C4, 2px 2px 10px 2px #FFF;
+            border-color: #DFDFDF;
+        }
+        .footer2 {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: inset -2px -2px 10px 4px #C4C4C4, inset 2px 2px 10px 2px #FFF;
+            border-color: #DFDFDF;
+        }
+        .examples {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* For mobile phone */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        }
+        .header {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .syntax {
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .def {
+            padding-top: 5px;
+        }
+        .def ul {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method</u>: <mark>.flatMap()</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u>:</b>
+                <li>this method first maps all elements of an array and then creates a new array by flattening the array.</li>
+                <li>it creates a new array from calling a function for every array element.</li>
+                <li>does not execute the function for empty elements.</li>
+                <li>does not change the original array.</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>array.flatMap(function(currentValue, index, arr), thisValue)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+                <table class="parameters" style="padding-bottom: 10px;">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>function()</td>
+                            <td>
+                                Required.<br>
+                                A function to be run for each array element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>currentValue</td>
+                            <td>
+                                Required.<br>
+                                The value of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>index</td>
+                            <td>
+                                Optional.<br>
+                                The index of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>arr</td>
+                            <td>
+                                Optional.<br>
+                                The array of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>thisValue</td>
+                            <td>
+                                Optional.<br>
+                                Default value undefined.<br>
+                                A value passed to the function to be used as its this value.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="padding-top: 10px;">
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>An array</td>
+                            <td>An array with the elements as a result of a callback function and then flattened.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <ul><b><u>Notes</u>:</b>
+            <li><b><i>.flatMap()</i></b> is supported in all modern browsers since January 2020</li>
+        </ul>
+        <ul><b><u>References</u>:</b>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap">Mozilla</a>
+            </li>
+            <li>
+                <a href="https://www.w3schools.com/jsref/jsref_array_flatmap.asp">w3schools</a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=hZ9WUyn2bvI">YouTube (Array flatMap() method in JavaScript!- New in Chrome Update 69)</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-7 footer2">
+            <div>
+                <h3><u>Example</u>:</h3>
+                <h4><b><u>Code</u>:</b></h4>
+                <p>
+                    const myArr = [1, 2, 3, 4, 5, 6]; <br>
+        const newArr = myArr.flatMap((x) => x * 2); <br>
+        document.getElementById("example1").innerHTML = newArr;
+                </p>
+                <p>
+                    const pairs = [
+            [2,6],
+            [8,2],
+            [5,9]
+        ];<br>
+
+        const result = pairs.map(function (pair) { <br>
+        &nbsp;&nbsp;return [<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;pair[0] + pair[1]<br>
+        &nbsp;&nbsp;];<br>
+        });<br>
+
+        document.getElementById("example2").innerHTML = result;
+                </p>
+            </div>
+        </div>
+        <div class="col-5 footer">
+            <ol><b><u>Result</u>:</b>
+                <li><span id="example1"></span></li>
+                <li><span id="example2"></span><br><span>this is a single array, if it were just .map it would be an array of 3 arrays</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+// Example 1
+        const myArr = [1, 2, 3, 4, 5, 6];
+        const newArr = myArr.flatMap((x) => x * 2);
+        document.getElementById("example1").innerHTML = newArr;
+// Example 2
+        const pairs = [
+            [2,6],
+            [8,2],
+            [5,9]
+        ];
+
+        const result = pairs.flatMap(function (pair) {
+            return [
+                pair[0] + pair[1]
+            ];
+        });
+
+        document.getElementById("example2").innerHTML = result;
+    </script>
+</body>
+</html>

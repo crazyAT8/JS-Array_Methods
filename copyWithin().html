@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Array Method</title>
+    <style>
+        body {
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 5px 5px;
+        }
+        h1 {
+            font-family: monospace;
+            padding-left: 20px;
+            margin-left: 40px;
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 5px 5px;
+            width: 40%;
+        }
+        #syntax {
+            border: 1px solid black;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        td {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding-left: 5px;
+        }
+        th {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        #table1 {
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 100px;
+            padding: 5px;
+        }
+        #table2 {
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 100px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>copyWithin Array Method</h1>
+    <pre>
+        <b><u>Definition</u></b>:                                                   <b><u>Browser Support</u></b>: 
+                This method copies array elements 
+                    to another position in the array
+                        it overwrites the existing values 
+                            and does not add items to the array.
+
+        <b><u>Syntax</u></b>
+
+            <span id="syntax"><i>array.copyWithin(target, start, end)</i></span>
+
+        <b><u>Parameters</u></b>
+        <table id="table1">
+            <tbody>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><i>target</i></td>
+                    <td>
+                        Required.
+                        The index (position) to copy the elements to.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>start</i></td>
+                    <td>
+                        Optional.
+                        The start index (position). Default is 0.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>end</i></td>
+                    <td>
+                        Optional.
+                        The end index (position). Default is the array length.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <b><u>Return Value</u></b>
+        <table id="table2">
+            <tbody>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>An Array</td>
+                    <td>The changed Array</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <b><u>Example:</u></b>
+                                    
+                <b>Return Value:</b><span id="test"></span> (2,0)
+                             </b><span id="test2"></span> (1,0)
+                             </b><span id="test3"></span> (2,0,2)
+
+        <b><u>Code:</u></b>
+                const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+
+                document.getElementById("test").innerHTML = fruits.copyWithin(2,0);
+                document.getElementById("test2").innerHTML = fruits.copyWithin(1,0);
+                document.getElementById("test3").innerHTML = fruits.copyWithin(2,0,2);
+        
+    </pre>
+
+    <script>
+       const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+
+    //    document.getElementById("test").innerHTML = fruits.copyWithin(2,0);
+    //    document.getElementById("test2").innerHTML = fruits.copyWithin(1,0);
+       document.getElementById("test3").innerHTML = fruits.copyWithin(2,0,2);
+    </script>
+</body>
+</html>

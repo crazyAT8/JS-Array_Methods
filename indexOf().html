@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Method .from()</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+        html {
+            font-family: "Montserrart", sans-serif;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 16px;
+            box-shadow: -2px -2px 6px 2px #fff, 2px 2px 6px 2px #c4c4c4;
+            border-color: #DFDFDF;
+        }
+        body {
+            background-color: #eee;
+        }
+        .header {
+            text-align: center;
+            font-size: 10px;
+            border: 1px solid rgb(252, 252, 240);
+            border-radius: 16px;
+            box-shadow: -2px -2px 10px 2px #ffffff, inset 2px 2px 10px 2px #8c8989;
+        }
+        .def ul {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+        }
+        li {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: inset -1px -1px 3px 1px #FFF, inset 1px 1px 3px 1px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 5px;
+            margin: 5px 10px 5px 5px;
+        }
+        .syntax {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 10px 2px #FFF, 2px 2px 10px 2px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 5px;
+            font-size: 11px;
+        }
+        .syntax h1 {
+            font-size: 15px;
+            margin: 0;
+        }
+        table, caption, td, th, thead, tbody, tr {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 3px;
+        }
+        .footer {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 10px 4px #C4C4C4, 2px 2px 10px 2px #FFF;
+            border-color: #DFDFDF;
+        }
+        .footer2 {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: inset -2px -2px 10px 4px #C4C4C4, inset 2px 2px 10px 2px #FFF;
+            border-color: #DFDFDF;
+        }
+        .examples {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* For mobile phone */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        }
+        .header {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .syntax {
+            margin-top: 20px;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .def {
+            padding-top: 5px;
+        }
+        .def ul {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method</u>: <mark>.indexOf()</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u></b>
+                <li>this method returns the first index (position) of a specified value.</li>
+                <li>this method retuns -1 if the value is not found.</li>
+                <li>this method starts at a specified index and searches from left to right.</li>
+                <li>By default the search starts at the first element and ends at the last.</li>
+                <li>Negative start values counts from the last element (but still searches from left to right).</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>array.indexOf(item, start)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+                <table class="parameters" style="padding-bottom: 10px">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>item</td>
+                            <td>
+                                Required.<br>
+                                The value to search for.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>start</td>
+                            <td>
+                                Optional.<br>
+                                Where to start the search.<br>
+                                Default value is 0.<br>
+                                Negative values start the search from the end of the array.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="padding-top: 10px;">
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A number</td>
+                            <td>
+                                The index (position) of the first item found.<br>
+                                -1 if the item is not found.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul><b><u>Notes</u>:</b>
+                <li><b><i>indexOf()</i></b> is an ECMAScript5 (ES5) feature.</li>
+                <li>ES5 (JavaScript 2009) fully supported in all browsers.</li>
+            </ul>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-7 footer2">
+                <div>
+                    <h3><u>Example</u></h3>
+                    <h4><b><u>Code</u>:</b></h4>
+                        <p class="examples">
+                            <code>
+
+                            </code>
+                        </p>
+                </div>
+            </div>
+
+            <div class="col-5 footer">
+                <ol><b><u>Result:</u></b>
+                    <li><span id="example1"></span></li>
+                    <li><span id="example2"></span></li>
+                    <li><span id="example3"></span></li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango", "Apple"];
+        let index = fruits.indexOf("Apple");
+        let index2 = fruits.indexOf("Apple", 3);
+        let index3 = fruits.indexOf("Apple" -1);
+
+        document.getElementById("example1").innerHTML = index;
+        document.getElementById("example2").innerHTML = index2;
+        document.getElementById("example3").innerHTML = index3;
+    </script>
+</body>

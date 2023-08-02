@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Method .every()</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+        html {
+            font-family: 'Montserrat', sans-serif;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+        }
+        body{
+            background-color: #EEE;
+        }
+        .header {
+            text-align: center;
+            font-size: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+        }
+        .def ul {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+        }
+        li {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: inset -1px -1px 3px 1px #FFF, inset 1px 1px 3px 1px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 5px;
+            margin: 5px 10px 5px 5px;
+        }
+        .syntax {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 5px;
+            font-size: 11px;
+        }
+        .syntax h1 {
+            font-size: 15px;
+            margin: 0;
+        }
+        table, caption, td, th, thead, tbody, tr {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+            border-color: #DFDFDF;
+            padding: 15px;
+        }
+        .footer {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: -4px -4px 13px 4px #C4C4C4, 4px 4px 13px 4px #FFF;
+            border-color: #DFDFDF;
+        }
+        .examples {
+            margin: 0;
+            padding: 0;
+        }
+        .green {
+            background-color: rgb(40, 226, 40);
+        }
+        .red {
+            background-color: rgb(250, 124, 124);
+        }
+
+        /* For mobile phone */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 768px) {
+        /* For desktop: */
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        }
+        .header {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .syntax {
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .def {
+            padding-top: 5px;
+        }
+        .def ul {
+            padding: 20px;
+        }
+        .return {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method</u>: <mark>.every()</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u>:</b>
+                <li>executes a function for each array element.</li>
+                <li>returns <span class="green">true</span> if the function returns <span class="green">true</span> for all elements.</li>
+                <li>returns <span class="red">false</span> if the function returns <span class="red">false</span> for one element.</li>
+                <li>does not execute the function for empty elements.</li>
+                <li>does not change the original array.</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>array.every(function(currentValue, index, arr), thisValue)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+
+                <table class="parameters">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>function()</td>
+                            <td>
+                                Required.<br>
+                                A function to be run for each element in the array.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>currentValue</td>
+                            <td>
+                                Required.<br>
+                                the value of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>index</td>
+                            <td>
+                                Optional.<br>
+                                The index of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>arr</td>
+                            <td>
+                                Optional.<br>
+                                The array of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>thisValue</td>
+                            <td>
+                                Optional. Default undefined. <br>
+                                A value passed to the function as its this value.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="return">
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A boolean</td>
+                            <td><span class="green">true</span> if all elements pass the test, otherwise <span class="red">false</span>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <ul><b><u>Notes</u></b>:
+            <li><b><i>.at()</i></b> is an ECMAScript5 (ES5) feature.</li>
+            <li>ES6 (JavaScript 2009) fully supported in all browsers.</li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-7 footer">
+            <div>
+                <h3><u>Example</u>:</h3>
+                <h4><b><u>Code</u>:</b></h4>
+                    
+            </div>
+        </div>
+        <div class="col-5 footer">
+            <ol><b><u>Result</u>:</b>
+                <li><span id="example1"></span></li>
+                <li><span id="example2"></span></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const ages = [32, 33, 16, 40];
+        document.getElementById("example1").innerHTML = ages.every(checkAge);
+
+        function checkAge(age) {
+            return age > 18;
+        }
+
+        // Check if all the answers in an array are the same
+        const survey = [
+            { name: "Steve", answer: "Yes"},
+            { name: "Jessica", answer: "Yes"},
+            { name: "Peter", answer: "Yes"},
+            { name: "Elaine", answer: "No"}
+        ];
+
+        document.getElementById("example2").innerHTML = survey.every(isSameAnswer);
+
+        function isSameAnswer(el,index,arr) {
+            // Return true for the first element
+            if (index === 0){
+                return true;
+            }
+            else {
+                // Compare the value of the previous element
+                return (el.answer === arr[index - 1].answer);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor Array Property</title>
+</head>
+<body>
+    <pre>
+        <h1>
+            <u>JavaScript Array Property:</u> <mark>constructor</mark>
+        </h1>
+        <b>
+            Definition and Usage
+        </b>
+            - returns the funcion that created the Array prototype.
+            - ES1 (1997)
+
+        <b>
+            <i>Syntax:</i>
+        </b>
+            <b><i>array.constructor</i></b>
+        <b>
+            <u>Return Value:</u>
+        </b>
+            <b>function Array() {[native code]}</b> 
+        <h3><u>Example:</u></h3>
+            <b><u>Code:</u></b>
+            const fruits = ["peach", "mango", "tangerine"];
+
+            const text = fruits.constructor;
+
+            document.getElementById("example1").innerHTML = text;
+
+            <b><u>Result:</u></b>
+            <p id="example1"></p>
+
+    </pre>
+        <script>
+            const fruits = ["peach", "mango", "tangerine"];
+
+            const text = fruits.constructor;
+
+            document.getElementById("example1").innerHTML = text;
+        </script>
+    
+</body>
+</html>

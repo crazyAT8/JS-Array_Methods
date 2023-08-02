@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fill() array method</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        html {
+            font-family: monospace, 'Courier New', Courier;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+            margin: 5px;
+        }
+        .header {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+            padding-left: 20px;
+        }
+        .menu ul {
+            list-style-type: circle;
+            margin: 0;
+            padding: 0;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+        }
+        .menu li {
+            padding: 8px;
+            margin: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+        }
+        .right {
+            padding: 10px;
+        }
+        .aside {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+        table, caption, th, td {
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 1px 1px;
+            padding: 5px 5px;
+        }
+        td {
+            text-align: left;
+            padding-left: 5px;
+        }
+        .syntax{
+            margin: 0;
+        }
+        .parameters {
+            margin-top: 10px;
+        }
+        .mainData {
+            padding-right: 50px;
+        }
+        .syntax {
+            padding-left: 50px;
+        }
+        .footer {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px black;
+            padding: 0px;
+            font-size: 14px;
+        }
+        li {
+            white-space: normal;
+        }
+
+        /* For desktop: */
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            [class*="col-"] {
+                width: 100%;
+            }
+            /* html {
+                margin-left: 15%;
+                width: auto;
+            } */
+            .header {
+                text-align: center;
+            }
+            .right {
+                padding: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method:</u> <mark>fill()</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 menu">
+            <ul><b>Definition and Usage</b>
+                <li>this method fills elements in an array with a value</li>
+                <li>it overwrites the original array</li>
+                <li>start and end positions can be specified</li>
+                <li>if not, all elements will be filled</li>
+            </ul>
+        </div>
+
+        <div class="col-3">
+            <h1><b><i>Syntax:</i></b></h1>
+            <p class="syntax"><b><i>array.fill(value, start, end)</i></b></p>
+        </div>
+
+        <div class="col-5 right">
+            <div class="aside">
+                <table class="parameters">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>value</td>
+                            <td class="mainData">
+                                Required.
+                                The value to fill in.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>start</td>
+                            <td class="mainData">
+                                Optional.
+                                The start index(position).
+                                Default is 0.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>end</td>
+                            <td class="mainData">
+                                Optional.
+                                The stop index (position).
+                                Default is array length.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>An array</td>
+                            <td>The filled array.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-7 footer">
+            <div style="margin: 0; padding: 0 0 0 5px;">
+                <h3><u>Example:</u></h3> 
+                <ul><b><u>Code:</u></b>
+                    <li style="white-space: normal;">const girls = ["Brittney", "Jenny", "Ursala", "Becky", "Erin"]</li>
+                    <li>document.getElementById("example1")<br>.innerHTML = girls;</li>
+                    <li>document.getElementById("example2")<br>.innerHTML = girls.fill("Betty");</li>
+                    <li>document.getElementById("example3")<br>.innerHTML = girls.fill("Kathy", 0, 1);</li>
+                </ul>                                                                                                
+            </div>
+        </div>
+    
+        <div class="col-5 footer">
+            <ol><b><u>Result:</u></b>
+                <li><span id="example1"></span></li>
+                <li><span id="example2"></span></li>
+                <li><span id="example3"></span></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="footer">
+        <ul><b><u>Notes:</u></b> 
+            <li>fill() is an ECMAScript6 (ES6) feature</li>
+            <li>ES6 is supported in all modern browsers</li>
+            <li>not supported in Internet Explorer 11 (or earlier).</li>
+            <li>does not take multiple values</li>
+        </ul>
+    </div>
+    
+    <script>
+        const girls = ["Brittney", "Jenny", "Ursala", "Becky", "Erin"]
+
+        document.getElementById("example1").innerHTML = girls;
+
+        document.getElementById("example2").innerHTML = girls.fill("Betty"); 
+
+        document.getElementById("example3").innerHTML = girls.fill("Kathy", 0, 1);
+    </script>
+</body>
+</html>
