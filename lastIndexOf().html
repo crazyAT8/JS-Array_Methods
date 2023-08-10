@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS array method lastIndexOf()</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method</u>: <mark></mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u>:</b>
+                <li>this method returns the last index (position) of a specified value.</li>
+                <li>this method returns -1 if the value is not found</li>
+                <li>statrs at a specified index and searches from right to left</li>
+                <li>by default the search starts at the last element and ends at the first</li>
+                <li>negative start values count from the last element (but still searches from right to left)</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>Array.lastIndexOf(item, start)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+                <table class="parameters" style="padding-bottom: 10px;">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>item</td>
+                            <td>
+                                Required <br>
+                                The value to search for.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>start</td>
+                            <td>
+                                Optional. <br>
+                                Where to start the search. <br>
+                                Default is the last element (array.length-1).<br>
+                                Negative start values counts from the last element (but still searches from right to left).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="padding-top: 10px;">
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A number</td>
+                            <td>The position of the specified item. <br> -1 if the item is not found.</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul><b><u>Notes</u>:</b>
+                <li>lastIndexOf() is an ECMAScript (ES5) feature.</li>
+                <li>ES5 (JavaScript 2009) fully supported in all browsers</li>
+            </ul>
+            <ul><b><u>Reference</u>:</b>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_lastindexof_array.asp">W3schools</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-7 footer2">
+                <div>
+                    <h3><u>Example</u></h3>
+                    <h4><b><u>Code</u>:</b></h4>
+                        <p class="examples">
+                            <code>
+                                const fruits = ["Orange","Apple","Mango","Apple","Banana","Apple"]; <br>
+                                let index = fruits.lastIndexOf("Apple"); <br>
+                                let index2 = fruits.lastIndexOf("Apple", 4); <br>
+                                let index3 = fruits.lastIndexOf("Apple", -2); <br>
+                                <br>
+                                document.getElementById("example1").innerHTML = index; <br>
+                                document.getElementById("example2").innerHTML = index2; <br>
+                                document.getElementById("example3").innerHTML = index3; <br>
+                            </code>
+                        </p>
+                </div>
+            </div>
+
+            <div class="col-5 footer">
+                <ol><b><u>Result:</u></b>
+                    <li><span id="example1"></span></li>
+                    <li><span id="example2"></span></li>
+                    <li><span id="example3"></span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fruits = ["Orange","Apple","Mango","Apple","Banana","Apple"];
+        let index = fruits.lastIndexOf("Apple");
+        let index2 = fruits.lastIndexOf("Apple", 4);
+        let index3 = fruits.lastIndexOf("Apple", -2);
+
+        document.getElementById("example1").innerHTML = index;
+        document.getElementById("example2").innerHTML = index2;
+        document.getElementById("example3").innerHTML = index3;
+    </script>
+</body>
+</html>
