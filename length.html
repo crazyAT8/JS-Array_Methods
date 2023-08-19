@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Property</u>: <mark>.length</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Description</u>:</b>
+                <li>The length property sets or returns the number of elements in an array.</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <h6 style="margin: 5px;">Return the length of an array:</h6>
+            <p style="margin: 5px;"><b><i>array.length</i></b></p>
+            <h6 style="margin: 5px;">Set the length of an array:</h6>
+            <p style="margin: 5px;"><b><i>array.length = number</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+
+                <table style="padding-top: 10px;">
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A number</td>
+                            <td>The number of elements in the array.</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding: 20px;">
+        <div class="footer">
+            <ul><b><u>Notes</u>:</b>
+                <li>length is an ECMAScript (ES1) feature.</li>
+                <li>ES1 (JavaScript 1997) is fully supported in all browsers</li>
+            </ul>
+            <ul><b><u>Reference</u>:</b>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_length_array.asp">W3schools</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 15px;">
+        <div class="col-6 footer2">
+            <div>
+                <h3><u>Example</u></h3>
+                <h4><b><u>Code</u>:</b></h4>
+                    <p class="examples">
+                        <code>
+                            const fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            let length = fruits.length;<br>
+                            fruits.length = 2;<br>
+                            <br>
+                            document.getElementById("example1").innerHTML = length;<br>
+                            document.getElementById("example2").innerHTML = fruits; <br>
+                        </code>
+                    </p>
+            </div>
+        </div>
+
+        <div class="col-5 footer ">
+            <ol><b><u>Result:</u></b>
+                <li><span id="example1"></span></li>
+                <li><span id="example2"></span></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let length = fruits.length;
+        fruits.length = 2;
+
+        document.getElementById("example1").innerHTML = length;
+        document.getElementById("example2").innerHTML = fruits; 
+    </script>
+</body>
+</html>
