@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Method push()</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method</u>: <mark>push</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u>:</b>
+                <li>this method adds new items to the end of an array.</li>
+                <li>this method changes the length of the array.</li>
+                <li>this method returns the new length.</li>
+            </ul>
+            <ul>Similar to 
+                <li>pop()</li>
+                <li>shift()</li>
+                <li>unshift()</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>array.push(item1, item2, ..., itemx)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+                <table class="parameters" style="padding-bottom: 10px;">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                item1 <br>
+                                item2 <br>
+                                ..<br>
+                                itemX
+                            </td>
+                            <td>
+                                The item(s) to add to the array. <br>
+                                Minimum one item is required.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="padding-top: 10px;">
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A number</td>
+                            <td>The new length of the Array.</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="col-8">
+                <ul><b><u>Notes</u>:</b>
+                    <li><mark>push</mark> is an ECMAScript1 (ES1) feature.</li>
+                    <li>ES1 (JavaScript 1997) is fully supported in all browsers</li>
+                </ul>
+                <ul><b><u>Reference</u>:</b>
+                    <li>
+                        <a href="">W3schools</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-7 footer2">
+                <div>
+                    <h3><u>Example</u></h3>
+                    <h4><b><u>Code</u>:</b></h4>
+                        <p class="examples">
+                            <code>
+                                const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+                                <br>
+                                document.getElementById("example1").innerHTML = fruits.push("kiwi", "Tomatos", "PineApple"); <br>
+                                document.getElementById("example2").innerHTML = fruits;
+                        
+                                
+                            </code>
+                        </p>
+                </div>
+            </div>
+
+            <div class="col-5 footer">
+                <ol><b><u>Result:</u></b>
+                    <li><span id="example1"></span></li>
+                    <li><span id="example2"></span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        document.getElementById("example1").innerHTML = fruits.push("kiwi", "Tomatos", "PineApple");
+        document.getElementById("example2").innerHTML = fruits;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array </u>: <mark>prototype</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u>:</b>
+                <li>prototype allows you to add new properties and methods to arrays.</li>
+                <li>prototype is a property available with all JavaScript objects.</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p style="padding: 0 10px;"><b><i>Array.prototype.name = value</i></b></p>
+            <h5 style="margin: 0; text-decoration: underline;">The prototype Property</h5>
+            <p style="font-size: 14px; padding: 0 10px;">The JavaScript <mark>prototype</mark> property allows you to add new properties to objects:</p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside" style="background-color: rgb(243, 229, 229);">
+                <table class="parameters" style="padding-bottom: 10px;">
+                    <caption style="padding: 15px;"><b>Warning</b></caption>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 5px;">You are not advised to change the prototype of an object that you do not control.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 5px;">You should not change the prototype of built in JavaScript datatypes like:</td>
+                        </tr>
+                        <tr>
+                           <td>
+                                <ul>
+                                    <li>Numbers</li>
+                                    <li>Strings</li>
+                                    <li>Arrays</li>
+                                    <li>Dates</li>
+                                    <li>Booleans</li>
+                                    <li>Function</li>
+                                    <li>Objects</li>
+                                </ul>
+                           </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 5px;">Only change the prototype of your own objects.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul><b><u>Notes</u>:</b>
+                <li>
+                    <mark>prototype</mark> is an ECMAScript (ES1) feature.
+                </li>
+                <li>ES1 (JavaScript 1997) is fully supported in all browsers</li>
+            </ul>
+            <ul><b><u>Reference</u>:</b>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_prototype_array.asp">W3schools</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-7 footer2">
+                <div>
+                    <h3><u>Example</u></h3>
+                    <h4><b><u>Code</u>:</b></h4>
+                        <p class="examples">
+                            <code>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Example1</u> <br> <br>
+                                // Add a new method <br>
+                                &nbsp;&nbsp; Array.prototype.myUcase = function() {          <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i < this.length; i++) {     <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this[i] = this[i].toUpperCase();        <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                                    &nbsp;&nbsp;};<br><br>
+
+                                // Use the method on any array                          <br>
+                                &nbsp;&nbsp; const fruits = ["Banana", "Orange", "Apple", "Mango"];  <br>
+                                &nbsp;&nbsp; fruits.myUcase(); <br>
+                                &nbsp;&nbsp; document.getElementById("example1").innerHTML = fruits;<br>
+                                <br>
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Example2</u> <br> <br>
+                                function Person(first, last, age, eye) {                    <br>
+                                &nbsp;&nbsp;this.firstName = first;                 <br>
+                                &nbsp;&nbsp;this.lastName = last;                       <br>
+                                &nbsp;&nbsp;this.eyeColor = eye;                    <br>
+                                }<br>
+                                const myFather = new Person("John", "Doe", "blue");         <br>
+                                const myMother = new Person("Sally", "Rally", "green");     <br>
+                                <br>
+                                Person.prototype.nationality = "English";               <br>
+                                <br>
+                                document.getElementById("example2").innerHTML =         <br>
+                                "My father is " + myFather.nationality + "<br>" +       
+                                "My mother is " + myMother.nationality;
+                            </code>
+                        </p>
+                </div>
+            </div>
+
+            <div class="col-5 footer">
+                <ol><b><u>Result:</u></b>
+                    <li><span id="example1"></span></li>
+                    <li><span id="example2"></span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add a new method
+        Array.prototype.myUcase = function() {
+            for (let i = 0; i < this.length; i++) {
+                this[i] = this[i].toUpperCase();
+            }
+        };
+
+        // Use the method on any array
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.myUcase();
+        document.getElementById("example1").innerHTML = fruits;
+
+
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.eyeColor = eye;
+        }
+        const myFather = new Person("John", "Doe", "blue");
+        const myMother = new Person("Sally", "Rally", "green");
+
+        Person.prototype.nationality = "English";
+
+        document.getElementById("example2").innerHTML = 
+        "My father is " + myFather.nationality + "<br>" +
+        "My mother is " + myMother.nationality;
+
+    </script>
+</body>
+</html>
