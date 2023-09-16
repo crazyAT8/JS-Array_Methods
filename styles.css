@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+.green {
+    color: rgb(7, 127, 17);
+}
 .row::after {
     content: "";
     clear: both;

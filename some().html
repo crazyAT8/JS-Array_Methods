@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Method .some()</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method</u>: <mark>.some()</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u>:</b>
+                <li>this method checks if an array elements pass a test (provided as a callback function).</li>
+                <li>this method executes the callback function once for each array element.</li>
+                <li>this method returns true (and stops) if the function returns true for one of the array elements.</li>
+                <li>this method returns false if the function returns false for all of the array elements.</li>
+                <li>this method does not execute the function for empty array elements.</li>
+                <li>this method does not change the original array.</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>array.some(function(value, index, arr), this)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+                <table class="parameters" style="padding-bottom: 10px;">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>function</td>
+                            <td>
+                                Required. <br>
+                                A function to run for each array element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Function</b></td>
+                            <td><b>parameters:</b></td>
+                        </tr>
+                        <tr>
+                            <td>value</td>
+                            <td>
+                                Required. <br>
+                                The value of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>index</td>
+                            <td>
+                                Optional. <br>
+                                The index of the current element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>arr</td>
+                            <td>
+                                Optional. <br>
+                                The array the current element belongs to.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>this</td>
+                            <td>
+                                Optional. Default undefined. <br>
+                                A value passed to the function to be used as its "this" value.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="padding-top: 10px;">
+                    <caption><b>Return Value</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A boolean</td>
+                            <td><mark>true</mark> if any of the array elements pass the test, otherwise <mark>false</mark>.</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul><b><u>Notes</u>:</b>
+                <li><mark>some()</mark> is an ECMAScript3 (ES3) feature.</li>
+                <li>ES3 (JavaScript 1999) is fully supported in all browsers.</li>
+                <li>Vary similar to the <mark>every()</mark> array method; which checks if every element in an array passes a test.</li>
+                <li>Also vary similar to  the <mark>forEach()</mark> method, which calls a function for each array element</li>
+                <li>this is one of those methods that you slip a self made function into</li>
+                <li>
+                    Think that the <mark>some()</mark> method is first thing when using Ctrl+F to find a word in a given page. <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;You have to loop through every item on the page and confirm <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whether or not the search returns any results (aka true if found and false if not found)
+                </li>
+            </ul>
+            <ul><b><u>Reference</u>:</b>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_some.asp">W3schools</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-7 footer2">
+                <div>
+                    <h3><u>Example</u></h3>
+                    <h4><b><u>Code</u>:</b></h4>
+                        <p class="examples">
+                            <code>
+                                const ages = [3, 10, 18, 20]; <br>
+                                <br>
+                                function checkAdult(age) { <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;return age > 18; <br>
+                                } <br>
+                                <br>
+                                document.getElementById ("example1") .innerHTML = ages.some(checkAdult); <br>
+                                <b class="green">
+                                    // remeber it checks the whole array and it only needs one value <br> 
+                                    // to pass the test for the result to be true <br>
+                                </b>
+                                <br>
+                                const numberNine = ages.some((age) =>{ <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;return age.ages === 9; <br>
+                                }); <br>
+                                <b class="green">
+                                    // here we used a function expression <br>
+                                    // and applied the "this" function parameter variable, as defined above <br>
+                                    // which is checking to see is there is a specific value <br>
+                                </b>
+                                document.getElementById("example2").innerHTML = numberNine;
+                            </code>
+                        </p>
+                </div>
+            </div>
+
+            <div class="col-5 footer">
+                <ol><b><u>Result:</u></b>
+                    <li><span id="example1"></span></li>
+                    <li><span id="example2"></span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ages = [3, 10, 18, 20];
+
+        function checkAdult(age) {
+            return age > 18;
+        }
+
+        document.getElementById("example1").innerHTML = ages.some(checkAdult);
+
+        const numberNine = ages.some((age) =>{
+            return age.ages === 9;
+        });
+
+        document.getElementById("example2").innerHTML = numberNine;
+    </script>
+</body>
+</html>
