@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array Methods (sort())</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1><u>JavaScript Array Method</u>: <mark>sort()</mark></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-4 def">
+            <ul><b><u>Definition</u>:</b>
+                <li>this method sorts the elements of an array.</li>
+                <li>this method overwrites the original array.</li>
+                <li>this method sorts the elements as strings in alphabetical and ascending order.</li>
+            </ul>
+        </div>
+
+        <div class="col-4 syntax">
+            <h1><u><i>Syntax</i></u></h1>
+            <p><b><i>array.sort(compareFunction)</i></b></p>
+        </div>
+
+        <div class="col-4">
+            <div class="aside">
+                <table class="parameters" style="padding-bottom: 10px;">
+                    <caption><b>Parameters</b></caption>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>compareFunction</td>
+                            <td>
+                                Optional. <br>
+                                A function that defines a sort order. The function should return a negative, 
+                                zero, or positive value, depending on the arguments: <br>
+                                <ul>
+                                    <li>function(a, b){return a-b}</li>
+                                </ul>
+                                When sort() compares two values, it sends the values to the compare function, 
+                                and sorts the values according to the returned (negative, zero, positive) value.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="padding-top: 10px;">
+                    <caption><b>Return Value</b></caption>
+                    <tbody>
+                        <tr>
+                            <td>The array with the items sorted.</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <ul><b><u>Notes</u>:</b>
+                <li><mark>sort()</mark> is an ECMAScript1 (ES1) feature.</li>
+                <li>ES1 (JavaScript 1997) is fully supported in all browsers</li>
+                <li>Sorting alphabetically works well for strings ("Apple" comes before "Banana").</li>
+                <li>But, sorting numbers can produce incorrect results.</li>
+                <li>"25" is bigger than "100", because "2" is bigger than "1".</li>
+                <li>You can fix this by providing a "compare function"</li>
+            </ul>
+            <ul><b><u>Reference</u>:</b>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_sort.asp">W3schools</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-7 footer2">
+                <div>
+                    <h3><u>Example</u></h3>
+                    <h4><b><u>Code</u>:</b></h4>
+                        <p class="examples">
+                            <code>
+                                const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+                                <br>
+                                document.getElementById("example1").innerHTML = fruits.sort(); <br>
+                                fruits.reverse(); <br>
+                                document.getElementById("example2").innerHTML = fruits; <br>
+                                <br>
+                                const points = [40, 100, 1, 5, 25, 10]; <br>
+                                points.sort(function(a, b){return a-b}); <br>
+                                document.getElementById("example3").innerHTML = points; <br>
+                                document.getElementById("example4").innerHTML = points[0]; <br>
+                                document.getElementById("example5").innerHTML = points[points.length-1]; <br>
+                                <br>
+                                points.sort(function(a, b){return b-a}); <br>
+                                document.getElementById("example6").innerHTML = points; <br>
+                            </code>
+                        </p>
+                </div>
+            </div>
+
+            <div class="col-5 footer">
+                <ol><b><u>Result:</u></b>
+                    <li><span id="example1"></span></li>
+                    <li><span id="example2"></span></li>
+                    <li><span id="example3"></span></li>
+                    <li><span id="example4"></span></li>
+                    <li><span id="example5"></span></li>
+                    <li><span id="example6"></span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        document.getElementById("example1").innerHTML = fruits.sort();
+        fruits.reverse();
+        document.getElementById("example2").innerHTML = fruits;
+
+        const points = [40, 100, 1, 5, 25, 10];
+        points.sort(function(a, b){return a-b});
+        document.getElementById("example3").innerHTML = points;
+        document.getElementById("example4").innerHTML = points[0];
+        document.getElementById("example5").innerHTML = points[points.length-1];
+
+        points.sort(function(a, b){return b-a});
+        document.getElementById("example6").innerHTML = points;
+    </script>
+</body>
+</html>
