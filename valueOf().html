@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
+    <title>JS Array Methods .valueOf()</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -12,20 +12,20 @@
 </head>
 <body>
     <div class="header">
-        <h1><u>JavaScript Array Method</u>: <mark></mark></h1>
+        <h1><u>JavaScript Array Method</u>: <mark>.valueOf()</mark></h1>
     </div>
 
     <div class="row">
         <div class="col-4 def">
             <ul><b><u>Definition</u>:</b>
-                <li>this method </li>
-                <li>this method</li>
+                <li>this method returns the array itself.</li>
+                <li>this method does not change the original array.</li>
             </ul>
         </div>
 
         <div class="col-4 syntax">
             <h1><u><i>Syntax</i></u></h1>
-            <p><b><i>Array.()</i></b></p>
+            <p><b><i>array.valueOf()</i></b></p>
         </div>
 
         <div class="col-4">
@@ -35,21 +35,11 @@
                     <thead>
                         <tr>
                             <th>Parameter</th>
-                            <th>Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
+                            <td>NONE</td>
                         </tr>
                     </tbody>
                 </table>
@@ -64,8 +54,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>An array</td>
+                            <td>The <mark>valueOf()</mark> method returns itself.</td>
                         </tr>
                     </tbody>
 
@@ -75,10 +65,12 @@
 
         <div class="footer">
             <ul><b><u>Notes</u>:</b>
+                <li><mark>valueOf()</mark> is an ESMAScript1 (ES1) feature.</li>
+                <li>ES1 (JavaScript 1997) is fully supported in all browsers.</li>
             </ul>
             <ul><b><u>Reference</u>:</b>
                 <li>
-                    <a href="">W3schools</a>
+                    <a href="https://www.w3schools.com/jsref/jsref_valueof_array.asp">W3schools</a>
                 </li>
             </ul>
         </div>
@@ -99,12 +91,19 @@
             <div class="col-5 footer">
                 <ol><b><u>Result:</u></b>
                     <li><span id="example1"></span></li>
+                    <li><span id="example2"></span></li>
                 </ol>
             </div>
         </div>
     </div>
 
     <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        const myArray = fruits.valueOf();
+        const myArray2 = fruits;
+        
+        document.getElementById("example1").innerHTML = myArray;
+        document.getElementById("example2").innerHTML = myArray2;
         
     </script>
 </body>
