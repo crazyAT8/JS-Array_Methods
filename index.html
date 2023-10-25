@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header" style="text-align: center;">
+        <h1><u>JavaScript Array Method</u></h1>
+    </div>
+
+    <div class="col-12">
+            <table class="parameters" style="padding-bottom: 10px; width: 100%;">
+                <caption><b>JavaScript Array Methods</b></caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="at().html">.at()</a>
+                        </td>
+                        <td>Returns an indexed element of an array</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="concat().html">concat()</a>
+                        </td>
+                        <td>Joins arrays and returns an array with the joined arrays
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="copyWithin().html">.copyWithin()</a>
+                        </td>
+                        <td>Copies array elements within the array, to and from specifed positions
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="entries().html">.entries()</a>
+                        </td>
+                        <td>Returns a key/value pair Array Iteration Object
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="every().html">.every()</a>
+                        </td>
+                        <td>Checks if every element in an array pass a test
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="fill().html">.fill()</a>
+                        </td>
+                        <td>Fill the elements in an array with a static value
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="filter().html">.filter()</a>
+                        </td>
+                        <td>Creates a new array with every element in an array that pass a test
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="find().html">.find()</a>
+                        </td>
+                        <td>Returns the value of the first element in an array that pass a test
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="findIndex().html">.findIndex()</a>
+                        </td>
+                        <td>Returns the index of the first element in an array that pass a test
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="flat().html">.flat()</a>
+                        </td>
+                        <td>Concatenates sub-array elements
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="flatMap().html">.flatMap()</a>
+                        </td>
+                        <td>Maps all array elements and creates a new flat array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="forEach().html">.forEach()</a>
+                        </td>
+                        <td>calls a function for each array element
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="from().html">.from()</a>
+                        </td>
+                        <td>creates an array from an object
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="includes().html">.include()</a>
+                        </td>
+                        <td>check if an array contains the specified element
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="indexOf().html">.indexOf()</a>
+                        </td>
+                        <td>Search the array for an element and returns its position
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="isArray().html">.isArray()</a>
+                        </td>
+                        <td>checks whether an object is an array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="join().html">.join()</a>
+                        </td>
+                        <td>Joins all elements of an array into a string
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="keys().html">.keys()</a>
+                        </td>
+                        <td>Returns a Array Iteration Object, containing the keys of the original array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="lastIndexOf().html">.lastIndexOf()</a>
+                        </td>
+                        <td>Search the array for an element, starting at the end, and returns its position
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="map().html">.map()</a>
+                        </td>
+                        <td>Creates a new array with the result of calling a function for each array element
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="pop().html">.pop()</a>
+                        </td>
+                        <td>Removes the last element of an array, and returns that element
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="push().html">.push()</a>
+                        </td>
+                        <td>Adds new elements to the end of an array, and returns the new length
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="reduce().html">.reduce()</a>
+                        </td>
+                        <td>Reduces the values of an array to a single value (going left-to-right)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="reduceRight().html">.reduceRight()</a>
+                        </td>
+                        <td>Reduces the values of an array to a single value (going right-to left)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="reverse().html">.reverse()</a>
+                        </td>
+                        <td>Reverses the order of the elements in an array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="shift().html">.shift()</a>
+                        </td>
+                        <td>Removes the first element of an array, and returns that element
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="slice().html">.slice()</a>
+                        </td>
+                        <td>Selects a part of an array, and returns the new array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="some().html">.some()</a>
+                        </td>
+                        <td>Checks if any of the elements in an array pass a test
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="sort().html">.sort()</a>
+                        </td>
+                        <td>Sorts the elements of an array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="splice().html">.splice()</a>
+                        </td>
+                        <td>Adds/Removes elements from an array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="toString().html">.toString()</a>
+                        </td>
+                        <td>Converts an array to a string, and returns the result
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="unshift().html">.unShift()</a>
+                        </td>
+                        <td>Adds new elements to the beginning of an array, and returns the new length
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="valueOf().html">.valueOf()</a>
+                        </td>
+                        <td>Returns the primitive value of an array
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table style="padding-top: 10px; width: 100%;">
+                <caption><b>Array Property</b></caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="constructor.html">constructor</a>
+                        </td>
+                        <td>Returns the function that created the Array object's prototype
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="length.html">length</a>
+                        </td>
+                        <td>Sets or returns the number of elements in an array
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="prototype.html">prototype</a>
+                        </td>
+                        <td>Allows you to add properties and methods to an Array object
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

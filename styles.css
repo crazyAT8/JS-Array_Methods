@@ -24,6 +24,10 @@ html {
 body {
     background-color: #eee;
 }
+a {
+    color: rgba(8, 8, 246, 0.639);
+    text-decoration: none;
+}
 .header {
     text-align: center;
     font-size: 10px;
